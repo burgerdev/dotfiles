@@ -10,10 +10,11 @@ Config { font = "xft:Consolas-11:style=bold"
             , Run Date "%H:%M:%S" "time" 10
             , Run StdinReader
             , Run CpuFreq ["-t","<cpu0>"] 10
+            , Run Com "switchkeymaps" ["show"] "keymap" 10
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%StdinReader% }{[%memory%]<fc=DarkSlateGray3>[ %date% ]</fc><fc=aquamarine2,black>[ %time% ]</fc>"
+       , template = "%StdinReader% }{[ %keymap% ][ %memory% ]<fc=DarkSlateGray3>[ %date% ]</fc><fc=aquamarine2,black>[ %time% ]</fc>"
 --       , template = "%StdinReader% }{[%eth0%][%cpu%@%cpufreq%][%memory%]<fc=DarkSlateGray3>[ %date% ]</fc><fc=aquamarine2,black>[ %time% ]</fc>"
 --       , lowerOnStart = True
        }
