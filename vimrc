@@ -1,13 +1,10 @@
-set smartindent
+set autoindent
+syntax on
 set tabstop=4
 set shiftwidth=4
 set expandtab
-
-" enable tab completion
-" set wildmode=longest,list,full
-" set wildmenu
-
-syntax on
+filetype on
+filetype plugin indent on
 
 " highlight line parts over 80 chars
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
