@@ -2,7 +2,7 @@ function fish_prompt
 
 set OLD_STATUS $status
 
-echo -n (set_color $fish_color_host)
+echo -n (set_color -o $fish_color_host)
 echo -n $USER
 echo -n "@"
 echo -n (fish_prompt_hostname)
