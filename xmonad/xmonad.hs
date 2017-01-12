@@ -13,14 +13,17 @@ import System.IO
 moveAppsToWorkspaces = composeAll
     [ className =? "Firefox" --> doShift "2:web"
     , className =? "Thunderbird" --> doShift "2:web"
-    , className =? "Spyder" --> doShift "1:dev"
-    , className =? "LilyTerm" --> doShift "1:dev"
+    , className =? "chromium" --> doShift "2:web"
+    , className =? "Unreal Editor" --> doShift "5"
+    , title =? "Unreal" --> doShift "5"
+--    , title =? "Figure 1" --> doShift "4:app"
     ]
+-- get className via xprop
 
 main = do
     xmproc <- spawnPipe "/usr/bin/xmobar /home/burger/.xmobarrc"
     xmonad $ ewmh defaultConfig
-        { workspaces = ["1:dev", "2:web", "3", "4", "5"]
+        { workspaces = ["1:dev", "2:web", "3:script", "4:code", "5", "6:ssh", "7", "8", "9:root"]
         , manageHook = moveAppsToWorkspaces <+> manageDocks <+> (isFullscreen --> doFullFloat) <+> manageHook defaultConfig
         , layoutHook = smartBorders . avoidStruts $ onWorkspace "2:web" Full $ layoutHook defaultConfig
         , logHook = dynamicLogWithPP xmobarPP
