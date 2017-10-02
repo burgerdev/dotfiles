@@ -1,5 +1,6 @@
 config/fish/config.fish
 config/fish/functions/adjust_env.fish
+config/fish/functions/adjust_linker_path.fish
 config/fish/functions/adjust_path.fish
 config/fish/functions/docker-attach.fish
 config/fish/functions/fish_prompt.fish
