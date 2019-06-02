@@ -12,7 +12,7 @@ end
 if test (whoami) = root 
     echo -n (set_color red)
 else
-    echo -n (set_color $fish_color_host)
+    echo -n (set_color purple)
     echo -n $USER
     echo -n "@"
 end
