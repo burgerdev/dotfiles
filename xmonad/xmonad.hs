@@ -20,7 +20,7 @@ main = do
             { ppOutput = hPutStrLn xmproc
             , ppTitle = xmobarColor "green" "" . shorten 50
             }
-        , terminal = "kitty"
+        , terminal = "alacritty"
 -- for Java Swing apps
         , startupHook = setWMName "LG3D"
         }
