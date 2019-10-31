@@ -2,4 +2,5 @@
 
 adjust_path
 adjust_env
+adjust_completions
 
