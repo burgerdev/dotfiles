@@ -13,5 +13,8 @@ function adjust_env
 
     set -x -g LC_COLLATE C
     set -x -g LANG en_US.utf8
-    set -x -g LANGUAGE en:de
+    set -x -g LANGUAGE en
+
+    # TODO: why would this be needed?
+    # set -e -g MANPATH
 end
