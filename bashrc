@@ -1,24 +1,25 @@
 # Private .bashrc file for user burger
 # PATH modification
 
-if [[ -d ~/bin ]]
+if [[ -d ~/.local/bin ]]
 then
-export PATH="$PATH:~/bin"
+export PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [[ -d ~/Private/bin ]]
+if [[ -d /usr/local/go/bin ]]
 then
-export PATH="$PATH:~/Private/bin"
-fi
-
-if [[ -d /opt/matlab/bin ]]
-then
-export PATH="$PATH:/opt/matlab/bin"
+export PATH="$PATH:/usr/local/go/bin"
+# export GOROOT="/usr/local/go"
 fi
 
 if [[ -f ~/.pythonpath ]]
 then
 export PYTHONPATH=`bash ~/.pythonpath`
+fi
+
+if [[ -d "$HOME/go" ]]
+then
+export GOPATH="$HOME/go"
 fi
 
 if [[ -f ~/.ldpath ]]
@@ -31,7 +32,10 @@ then
 export CPLUS_INCLUDE_PATH=`bash ~/.llpath`
 fi
 
-
+if which opam 2>/dev/null
+then
+  eval `opam config env`
+fi
 
 # aliases
 
@@ -42,17 +46,11 @@ alias la='ls -la'
 alias l='ll'
 alias egrep='grep -E'
 alias fgrep='grep -F'
-alias svim='sudo vim'
 alias R='R -q --vanilla'
 alias octave='octave -q'
-alias gstat='git status'
-alias gp='git pull'
 
 
 # Environment
-export GIT_AUTHOR_NAME="Markus Rudy"
-export GIT_COMMITTER_NAME="Markus Rudy"
-export GIT_AUTHOR_EMAIL="webmaster@burgerdev.de"
 export GIT_PAGER=most
 export GIT_EDITOR=vim 
 

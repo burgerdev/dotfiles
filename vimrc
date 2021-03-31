@@ -1,8 +1,8 @@
 set autoindent
 syntax on
 set background=dark
-set tabstop=4
-set shiftwidth=4
+set tabstop=2
+set shiftwidth=2
 set expandtab
 filetype on
 filetype plugin indent on
