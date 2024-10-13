@@ -6,6 +6,8 @@ function adjust_env
     set -x -g GIT_EDITOR vim
     set -x -g GIT_PAGER most
 
+    set -x -g DO_NOT_TRACK 1
+
     if which patdiff-git-wrapper 2>/dev/null >&2
         set -x -g GIT_EXTERNAL_DIFF (which patdiff-git-wrapper)
         set -x -g GIT_PAGER 'less -R'
