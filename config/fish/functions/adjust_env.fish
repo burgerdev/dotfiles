@@ -27,4 +27,8 @@ function adjust_env
     if test -S /run/user/(id -u)/gcr/ssh; and echo $TERM | grep -q screen
         set -x -g SSH_AUTH_SOCK /run/user/(id -u)/gcr/ssh
     end
+
+    if which direnv 2>/dev/null >&2
+        direnv hook fish | source
+    end
 end
