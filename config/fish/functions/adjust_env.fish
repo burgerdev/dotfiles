@@ -19,4 +19,12 @@ function adjust_env
 
     # TODO: why would this be needed?
     # set -e -g MANPATH
+
+    if test -S /run/user/(id -u)/ssh-agent.socket; and echo $TERM | grep -q screen
+        set -x -g SSH_AUTH_SOCK /run/user/(id -u)/ssh-agent.socket
+    end
+
+    if test -S /run/user/(id -u)/gcr/ssh; and echo $TERM | grep -q screen
+        set -x -g SSH_AUTH_SOCK /run/user/(id -u)/gcr/ssh
+    end
 end
