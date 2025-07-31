@@ -131,3 +131,4 @@ export PS4="\[\033[1;34m\][\${LINENO}]+\[\033[00m\] "
 brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
 
 
+. "$HOME/.cargo/env"
