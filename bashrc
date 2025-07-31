@@ -59,6 +59,14 @@ export GIT_EDITOR=vim
 export EDITOR=vim
 export PAGER=most
 
+# Homebrew
+export HOMEBREW_PREFIX="/opt/homebrew";
+export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
+export HOMEBREW_REPOSITORY="/opt/homebrew";
+export PATH="$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
+export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
+export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -116,7 +124,6 @@ export PS4="\[\033[1;34m\][\${LINENO}]+\[\033[00m\] "
 
 
 # enable bash completion in interactive shells
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
+brew_etc="$(brew --prefix)/etc" && [[ -r "${brew_etc}/profile.d/bash_completion.sh" ]] && . "${brew_etc}/profile.d/bash_completion.sh"
+
 
