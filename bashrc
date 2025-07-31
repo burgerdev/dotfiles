@@ -32,7 +32,7 @@ then
 export CPLUS_INCLUDE_PATH=`bash ~/.llpath`
 fi
 
-if which opam 2>/dev/null
+if which opam >/dev/null 2>/dev/null
 then
   eval `opam config env`
 fi
