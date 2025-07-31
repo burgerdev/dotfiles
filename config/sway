@@ -217,6 +217,9 @@ bar {
         background #323232
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
+
+    # Work around https://github.com/swaywm/sway/issues/7575
+    tray_output none
 }
 
 focus_follows_mouse yes
