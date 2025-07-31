@@ -5,6 +5,7 @@ function adjust_env
     set -x -g PAGER most
     set -x -g GIT_EDITOR vim
     set -x -g GIT_PAGER most
+    set -x -g DO_NOT_TRACK 1
 
     set -x -g DO_NOT_TRACK 1
 

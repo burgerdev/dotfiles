@@ -59,6 +59,9 @@ export GIT_EDITOR=vim
 export EDITOR=vim
 export PAGER=most
 
+# Misc
+
+export DO_NOT_TRACK=1
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
