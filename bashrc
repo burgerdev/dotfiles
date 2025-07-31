@@ -37,6 +37,8 @@ then
   eval `opam config env`
 fi
 
+export SSH_AUTH_SOCK="~/.ssh/agent"
+
 # aliases
 
 alias grep='grep --color=auto'
