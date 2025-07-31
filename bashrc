@@ -67,6 +67,10 @@ export PATH="$HOME/.local/bin:/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
+# Misc
+
+export DO_NOT_TRACK=1
+
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
