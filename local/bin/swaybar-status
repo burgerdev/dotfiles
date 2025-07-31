@@ -1,0 +1,29 @@
+#!/bin/bash
+
+PATH="$PATH:/home/burger/.local/bin"
+
+cat <<EOF
+{ "version": 1 }
+[
+EOF
+
+while true
+do
+  sleep 1
+  cat <<EOF
+[
+  {
+    "full_text": "$(switchkeymaps show)"
+  },
+  {
+    "full_text": "≣ $(free -m | awk ' /Mem/ { printf "%02d%%", $3 / $2 * 100 } ')"
+  },
+  {
+    "full_text": "$(showcputemp)"
+  },
+  {
+    "full_text": "$(date +'%Y-%m-%d %H:%M:%S')"
+  }
+],
+EOF
+done

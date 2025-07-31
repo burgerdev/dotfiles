@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export LC_ALL=C
+temp=$(sensors -j k10temp-pci-00c3 | jq '."k10temp-pci-00c3"."Tctl"."temp1_input"')
+printf "%s°C" "$(cut -d. -f1 <<<"$temp")"
+exit 0
+printf "%.0f°C" `sensors -u -j | grep -v ERROR | jq '."k10temp-pci-00c3"."Tctl"."temp1_input"'`
+
